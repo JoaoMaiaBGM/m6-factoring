@@ -1,14 +1,7 @@
-import { Link } from "react-router-dom";
+import LoginPage from "../../Components/LoginPage";
 
 const Login = () => {
-  return (
-    <>
-      <h2>Login</h2>
-      <Link to='/home'>
-        <button>Home</button>
-      </Link>
-    </>
-  );
+  return <LoginPage />;
 };
 
 export default Login;
