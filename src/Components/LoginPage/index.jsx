@@ -2,7 +2,7 @@ import docs_img from "../../Assets/docs_img.png";
 import { LoginPageContainer } from "./style";
 import { Link } from "react-router-dom";
 
-const LoginPage = ({ Login }) => {
+const LoginPage = () => {
   return (
     <LoginPageContainer>
       <div className='loginPage-action'>
@@ -12,7 +12,9 @@ const LoginPage = ({ Login }) => {
         </h1>
         <p className='loginPage-paragraph'>de forma rápida e segura</p>
         <Link to='/home'>
-          <button className='login-btn'>Iniciar</button>
+          <button className='login-btn' type='button'>
+            Iniciar
+          </button>
         </Link>
       </div>
       <div className='loginPage-info'>

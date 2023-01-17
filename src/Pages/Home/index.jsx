@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
+import HomePage from "../../Components/HomePage";
+import Header from "../../Components/Header";
 
 const Home = () => {
   return (
     <>
-      <h2>Home</h2>
-      <Link to='/login'>
-        <button>Login</button>
-      </Link>
+      <Header />
+      <HomePage />
     </>
   );
 };
