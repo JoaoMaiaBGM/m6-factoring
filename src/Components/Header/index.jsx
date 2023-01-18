@@ -9,7 +9,7 @@ const Header = () => {
           <h2 className="'loginPage-name">FACTORING</h2>
           <Link to='/login'>
             <button className='header-btn' type='button'>
-              Início
+              Sair
             </button>
           </Link>
         </div>
