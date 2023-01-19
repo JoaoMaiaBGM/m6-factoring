@@ -17,7 +17,9 @@ function Provider({ children }) {
         console.log(err);
       });
 
-    toast.success("Cálculo feito com sucesso!");
+    if (data) {
+      toast.success("Cálculo feito com sucesso!");
+    }
   }
 
   return (
