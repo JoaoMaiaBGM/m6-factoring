@@ -25,8 +25,14 @@ function Provider({ children }) {
     }
   }
 
+  function handleReset() {
+    Array.from(document.querySelectorAll("input")).forEach(
+      (input) => (input.value = "")
+    );
+  }
+
   return (
-    <Context.Provider value={{ handleFactoring, values }}>
+    <Context.Provider value={{ handleFactoring, values, handleReset }}>
       {children}
     </Context.Provider>
   );

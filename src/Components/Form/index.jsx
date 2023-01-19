@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { Context } from "../../Context/AuthContext";
 
 const FactoringForm = () => {
-  const { handleFactoring } = useContext(Context);
+  const { handleFactoring, handleReset } = useContext(Context);
 
   const { register, handleSubmit } = useForm();
 
@@ -31,7 +31,14 @@ const FactoringForm = () => {
       <label htmlFor=''>Informe o percentual de MDR*</label>
       <input type='number' id='mdr' {...register("mdr")} />
 
-      <button type='submit'>Calcular</button>
+      <button
+        type='submit'
+        onClick={() => {
+          handleReset();
+        }}
+      >
+        Calcular
+      </button>
     </FormContainer>
   );
 };
