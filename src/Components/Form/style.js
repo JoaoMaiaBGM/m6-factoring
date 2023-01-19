@@ -39,6 +39,23 @@ export const FormContainer = styled.form`
     border-radius: 4px;
   }
 
+  span {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 11px;
+    line-height: 13px;
+
+    color: #b3b3b3;
+  }
+
+  p {
+    margin-top: 3px;
+    font-size: 12px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    color: red;
+  }
+
   button {
     width: 6rem;
     height: 2.5rem;
