@@ -12,7 +12,7 @@ const LoginPage = () => {
         </h1>
         <p className='loginPage-paragraph'>de forma rápida e segura</p>
         <Link to='/home'>
-          <button className='login-btn' type='button'>
+          <button className='btn-login' type='button'>
             Iniciar
           </button>
         </Link>
