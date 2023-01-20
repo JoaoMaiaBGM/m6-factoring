@@ -1,5 +1,6 @@
 import { Container } from "./style";
 import FactoringForm from "../Form";
+import Footer from "../footer";
 import ValuesList from "../ValuesList";
 
 const HomePage = () => {
@@ -9,6 +10,7 @@ const HomePage = () => {
         <FactoringForm />
         <ValuesList />
       </Container>
+      <Footer />
     </>
   );
 };
