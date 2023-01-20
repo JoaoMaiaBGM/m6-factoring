@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import formSchema from "../../Validators/SchemaForm";
 
 const FactoringForm = () => {
-  const { handleFactoring, handleReset } = useContext(Context);
+  const { handleFactoring } = useContext(Context);
 
   const {
     register,
@@ -47,14 +47,7 @@ const FactoringForm = () => {
         <input type='number' id='mdr' {...register("mdr")} />
         <p>{errors.mdr?.message}</p>
       </div>
-      <button
-        type='submit'
-        onClick={() => {
-          handleReset();
-        }}
-      >
-        Calcular
-      </button>
+      <button type='submit'>Calcular</button>
     </FormContainer>
   );
 };

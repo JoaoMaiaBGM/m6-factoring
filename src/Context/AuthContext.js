@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useEffect } from "react";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import Api from "../Services/api";
@@ -7,20 +7,22 @@ const Context = createContext();
 
 function Provider({ children }) {
   const [values, setValues] = useState(Object);
+  const [loading, setLoading] = useState(false);
 
   async function handleFactoring(factoringData) {
-    const data = await Api.post(
-      "https://frontend-challenge-7bu3nxh76a-uc.a.run.app",
-      factoringData
-    )
+    setLoading(true);
+
+    await Api.post("", factoringData)
       .then((res) => {
         setValues(res.data);
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
       });
 
-    if (data) {
+    if (values) {
+      setLoading(false);
       toast.success("Cálculo feito com sucesso!");
     }
   }
@@ -32,7 +34,7 @@ function Provider({ children }) {
   }
 
   return (
-    <Context.Provider value={{ handleFactoring, values, handleReset }}>
+    <Context.Provider value={{ handleFactoring, values, handleReset, loading }}>
       {children}
     </Context.Provider>
   );

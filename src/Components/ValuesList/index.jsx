@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Context } from "../../Context/AuthContext";
 
 const ValuesList = () => {
-  const { values } = useContext(Context);
+  const { values, loading } = useContext(Context);
 
   const value = Object.values(values);
 
@@ -36,6 +36,8 @@ const ValuesList = () => {
         </ul>
       </div>
     </ListContainer>
+  ) : loading ? (
+    <span> Carregando...</span>
   ) : (
     <ListContainer>
       <div>
