@@ -15,26 +15,39 @@ function Provider({ children }) {
     await Api.post("", factoringData)
       .then((res) => {
         setValues(res.data);
+        if (res.status === 200) {
+          setLoading(false);
+          toast.success("Cálculo feito com sucesso!");
+        }
       })
       .catch((err) => {
         console.log(err);
         setLoading(false);
+        toast.error("Dados inválidos!");
       });
-
-    if (values) {
-      setLoading(false);
-      toast.success("Cálculo feito com sucesso!");
-    }
   }
 
-  function handleReset() {
-    Array.from(document.querySelectorAll("input")).forEach(
-      (input) => (input.value = "")
-    );
+  function makeList(values) {
+    const valuesKeys = Object.keys(values);
+
+    return valuesKeys.map((valueKey, index) => {
+      const days = valueKey === "1" ? "Amanhã" : `Em ${valueKey} dias`;
+      const amount = Number(values[valueKey]).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      });
+
+      return (
+        <div key={index} className='list-item'>
+          <h3>{days}</h3>
+          <p>{amount}</p>
+        </div>
+      );
+    });
   }
 
   return (
-    <Context.Provider value={{ handleFactoring, values, handleReset, loading }}>
+    <Context.Provider value={{ handleFactoring, values, loading, makeList }}>
       {children}
     </Context.Provider>
   );

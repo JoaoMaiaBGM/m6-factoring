@@ -15,7 +15,6 @@ const FactoringForm = () => {
   } = useForm({
     resolver: yupResolver(formSchema),
   });
-
   return (
     <FormContainer onSubmit={handleSubmit(handleFactoring)}>
       <h2>Simule sua Antecipação</h2>
