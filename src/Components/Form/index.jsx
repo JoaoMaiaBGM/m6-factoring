@@ -48,6 +48,7 @@ const FactoringForm = () => {
 
         <label htmlFor='days'>Se preferir, informe outro período</label>
         <input type='text' id='days' {...register("days")} />
+        <span>Exemplo: 30,60,90</span>
       </div>
       <button type='submit'>Calcular</button>
     </FormContainer>
