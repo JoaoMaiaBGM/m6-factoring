@@ -12,10 +12,6 @@ function Provider({ children }) {
   async function handleFactoring(factoringData) {
     setLoading(true);
 
-    factoringData.days = factoringData.days.split(",").map((day) => {
-      return Number(day.trim());
-    });
-
     await Api.post("", factoringData)
       .then((res) => {
         setValues(res.data);
@@ -50,16 +46,8 @@ function Provider({ children }) {
     });
   }
 
-  function handleReset() {
-    Array.from(document.querySelectorAll("input")).forEach(
-      (input) => (input.value = "")
-    );
-  }
-
   return (
-    <Context.Provider
-      value={{ handleFactoring, values, handleReset, loading, makeList }}
-    >
+    <Context.Provider value={{ handleFactoring, values, loading, makeList }}>
       {children}
     </Context.Provider>
   );
