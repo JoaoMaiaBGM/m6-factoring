@@ -15,7 +15,6 @@ const FactoringForm = () => {
   } = useForm({
     resolver: yupResolver(formSchema),
   });
-
   return (
     <FormContainer onSubmit={handleSubmit(handleFactoring)}>
       <h2>Simule sua Antecipação</h2>
@@ -46,6 +45,9 @@ const FactoringForm = () => {
         <label htmlFor='mdr'>Informe o percentual de MDR*</label>
         <input type='number' id='mdr' {...register("mdr")} />
         <p>{errors.mdr?.message}</p>
+
+        <label htmlFor='days'>Se preferir, informe outro período</label>
+        <input type='text' id='days' {...register("days")} />
       </div>
       <button type='submit'>Calcular</button>
     </FormContainer>
