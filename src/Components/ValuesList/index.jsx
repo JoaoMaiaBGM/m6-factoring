@@ -20,7 +20,9 @@ const ValuesList = () => {
       </div>
     </ListContainer>
   ) : loading ? (
-    <span> Carregando...</span>
+    <ListContainer>
+      <span>Calculando...</span>
+    </ListContainer>
   ) : (
     <ListContainer>
       <div>
