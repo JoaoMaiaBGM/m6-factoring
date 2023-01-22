@@ -11,7 +11,6 @@ function Provider({ children }) {
   async function handleFactoring(factoringData) {
     setLoading(true);
 
-
     const removingEmptyDaysList = Object.values(factoringData);
 
     factoringData.days = String(factoringData.days)
@@ -21,8 +20,8 @@ function Provider({ children }) {
       });
 
     if (
-      factoringData.days.length == 1 ||
-      removingEmptyDaysList[3] == "" ||
+      factoringData.days.length === 1 ||
+      removingEmptyDaysList[3] === "" ||
       factoringData.days === null
     ) {
       delete factoringData.days;
@@ -45,7 +44,7 @@ function Provider({ children }) {
   function makeList(values) {
     const valuesKeys = Object.keys(values);
 
-    if (valuesKeys != "0") {
+    if (valuesKeys !== "0") {
       return valuesKeys.map((valueKey, index) => {
         const days = valueKey === "1" ? "Amanhã" : `Em ${valueKey} dias`;
         const amount = Number(values[valueKey]).toLocaleString("pt-BR", {
@@ -60,7 +59,6 @@ function Provider({ children }) {
         );
       });
     }
-
   }
 
   return (
