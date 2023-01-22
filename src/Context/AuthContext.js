@@ -12,9 +12,11 @@ function Provider({ children }) {
   async function handleFactoring(factoringData) {
     setLoading(true);
 
-    factoringData.days = factoringData.days.split(",").map((day) => {
-      return Number(day.trim());
-    });
+    factoringData.days = String(factoringData.days)
+      .split(",")
+      .map((day) => {
+        return Number(day.trim());
+      });
 
     await Api.post("", factoringData)
       .then((res) => {
