@@ -23,6 +23,7 @@ const FactoringForm = () => {
         <input
           type='number'
           id='amount'
+          min={1000}
           placeholder='R$1.000,00'
           {...register("amount")}
         />
