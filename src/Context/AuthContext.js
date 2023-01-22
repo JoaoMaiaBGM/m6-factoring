@@ -11,6 +11,7 @@ function Provider({ children }) {
   async function handleFactoring(factoringData) {
     setLoading(true);
 
+
     const removingEmptyDaysList = Object.values(factoringData);
 
     factoringData.days = String(factoringData.days)
@@ -26,7 +27,6 @@ function Provider({ children }) {
     ) {
       delete factoringData.days;
     }
-
     await Api.post("", factoringData)
       .then((res) => {
         setValues(res.data);
@@ -52,7 +52,6 @@ function Provider({ children }) {
           style: "currency",
           currency: "BRL",
         });
-
         return (
           <div key={index} className='list-item'>
             <h3>{days}</h3>
@@ -61,6 +60,7 @@ function Provider({ children }) {
         );
       });
     }
+
   }
 
   return (
