@@ -50,4 +50,13 @@ export const ListContainer = styled.section`
       font-size: 18px;
     }
   }
+
+  span {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-weight: 600;
+    font-size: 23px;
+
+    color: #5d9cec;
+  }
 `;
