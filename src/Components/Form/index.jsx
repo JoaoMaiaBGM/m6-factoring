@@ -46,7 +46,8 @@ const FactoringForm = () => {
         <label htmlFor='mdr'>Informe o percentual de MDR*</label>
         <input type='number' id='mdr' {...register("mdr")} />
         <p>{errors.mdr?.message}</p>
-
+      </div>
+      <div>
         <label htmlFor='days'>Se preferir, informe outro período</label>
         <input type='text' id='days' {...register("days")} />
         <span>Exemplo: 30,60,90</span>

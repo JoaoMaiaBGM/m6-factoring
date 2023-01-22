@@ -2,18 +2,19 @@ import styled from "styled-components";
 
 export const FormContainer = styled.form`
   width: 50%;
-  height: 90%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-left: 60px;
 
   h2 {
+    margin: 0 0 2px 0;
+
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 22px;
 
     color: #656565;
   }
@@ -40,16 +41,18 @@ export const FormContainer = styled.form`
   }
 
   span {
+    margin: 0;
+
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
     font-size: 11px;
-    line-height: 13px;
 
     color: #b3b3b3;
   }
 
   p {
-    margin-top: 3px;
+    margin: 0;
+
     font-size: 12px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
