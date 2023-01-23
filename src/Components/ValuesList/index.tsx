@@ -5,7 +5,7 @@ import { Context } from "../../Context/AuthContext";
 const ValuesList = () => {
   const { values, loading, makeList } = useContext(Context);
 
-  return Object.keys(values).length <= 0 ? (
+  return Object.keys(values as {}).length <= 0 ? (
     <ListContainer>
       <div>
         <h2>VOCÊ RECEBERÁ:</h2>
@@ -27,7 +27,7 @@ const ValuesList = () => {
     <ListContainer>
       <div>
         <h2>VOCÊ RECEBERÁ:</h2>
-        <ul>{makeList(values)}</ul>
+        <ul>{makeList(values as {})}</ul>
       </div>
     </ListContainer>
   );
