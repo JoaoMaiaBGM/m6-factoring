@@ -11,7 +11,7 @@ function App() {
         <Provider>
           <RoutesMain />
         </Provider>
-        <ToastContainer theme='dark' autoClose='1500' />
+        <ToastContainer theme='dark' autoClose={1500} />
       </header>
     </div>
   );

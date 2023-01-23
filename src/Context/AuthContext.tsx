@@ -1,14 +1,21 @@
 import { createContext, useState } from "react";
 import { toast } from "react-toastify";
+import {
+  IFactoringData,
+  IFactoringProps,
+  IFactoringProviderData,
+} from "../Providers/Types";
 import Api from "../Services/api";
 
-const Context = createContext();
+const Context = createContext<IFactoringProviderData>(
+  {} as IFactoringProviderData
+);
 
-function Provider({ children }) {
+function Provider({ children }: IFactoringProps) {
   const [values, setValues] = useState(Object);
   const [loading, setLoading] = useState(false);
 
-  async function handleFactoring(factoringData) {
+  async function handleFactoring(factoringData: IFactoringData) {
     setLoading(true);
 
     const removingEmptyDaysList = Object.values(factoringData);
@@ -41,10 +48,10 @@ function Provider({ children }) {
       });
   }
 
-  function makeList(values) {
+  function makeList(values: any) {
     const valuesKeys = Object.keys(values);
 
-    if (valuesKeys !== "0") {
+    if (!valuesKeys.includes("0")) {
       return valuesKeys.map((valueKey, index) => {
         const days = valueKey === "1" ? "Amanhã" : `Em ${valueKey} dias`;
         const amount = Number(values[valueKey]).toLocaleString("pt-BR", {

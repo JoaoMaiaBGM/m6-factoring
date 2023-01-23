@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Context } from "../../Context/AuthContext";
 import { yupResolver } from "@hookform/resolvers/yup";
 import formSchema from "../../Validators/SchemaForm";
+import { IFactoringData } from "../../Providers/Types";
 
 const FactoringForm = () => {
   const { handleFactoring } = useContext(Context);
@@ -12,7 +13,7 @@ const FactoringForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<IFactoringData>({
     resolver: yupResolver(formSchema),
   });
   return (
